@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Personalyze</title>
+	<link rel="icon" href="img/Fevicon.png" type="image/png">
+
+  <link rel="stylesheet" href="page1Vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="page1Vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="page1Vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="page1Vendors/linericon/style.css">
+  <link rel="stylesheet" href="page1Vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="page1Vendors/owl-carousel/owl.carousel.min.css">
+
+  <link rel="stylesheet" href="css/mainStyle.css">
+  <link rel="stylesheet" href="css/page1Style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+
+  
+<!--================ simulation start modal start=================--> 
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Personalyze</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Twitter Username:</label>
+                        <input type="text" class="form-control" id="username">
+                        <span id="usernameError" style="color:red"></span>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button" style="border-color:#21146a;" data-dismiss="modal">Close</button>
+                <button type="button" class="button" style="background-color: #21146a; color: #fff;" id="btnPage1">Check</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+<!--================ simulation start modal end=================-->
+
+<!--================Page 1=================-->
+
+    <div id="page1" style="display:none;">
+        <!--================ Hero sm Banner start =================-->      
+        <section class="hero-banner mb-30px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="hero-banner__img">
+                    <img class="img-fluid" src="img/banner/hero-banner.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 pt-5">
+                    <div class="hero-banner__content">
+                    <h1>PERSONALYZE</h1>
+                    <p>An automatic personality predictor that uses users’ publicly available information on their twitter profile in order to generate powerful insights which can in turn be used to predict attributes that determine the user’s personality.
+                    </p>
+                    <button type="button" class="button bg" data-toggle="modal" data-target="#exampleModal">Start</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </section>
+        <!--================ Hero sm Banner end =================-->
+
+        <!-- ================ start footer Area ================= -->
+        <footer class="footer-area section-gap">
+                <div class="container">
+                    
+                    <div class="footer-bottom row align-items-center text-center text-lg-left">
+                        <p class="footer-text m-0 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+        </footer>
+        <!-- ================ End footer Area ================= -->
+    </div>
+<!--================Page 1=================-->
+
+
+<!--================Page 2=================-->
+  
+    <div id="page2" style="display:none;">
+        <!--================ Hero sm Banner start =================-->      
+        <section class="hero-banner mb-30px">
+          <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center" style="color:#fff;">PERSONALYZE</h1>
+                    <p class="text-center" style="color:#fff;">Predicted scores for each trait is displayed below</p>
+                </div>
+                <div class="col-md-12">
+                    <form>
+                        <table class="table table-light table-page2">
+                            <thead class="thead-light">
+                              <tr>
+                                <th scope="col">Trait</th>
+                                <th scope="col">Score</th>
+                              </tr>
+                            </thead>
+                            <tbody id="scoreEntry">
+                                <p id="scoreEntryError" class="text-center" style="color:red;"></p>
+                              
+                            </tbody>
+
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div id="chart">
+                    <canvas id="score-chart" width="600" height="600"></canvas>
+                </div>
+            </div>
+            
+          </div>
+          <div class="container" id="explain">
+            <div class="row">
+                <h3>Openness</h3>
+                <p>describes a person's tendency to think abstractly. Those who are high in Openness tend to be creative, adventurous, and intellectual. They enjoy playing with ideas and discovering novel experiences. Those who are low in Openness tend to be practical, traditional, and focused on the concrete. They tend to avoid the unknown and follow traditional ways.</p>
+            </div>
+
+            <div class="row">
+                <h3>Conscientiousness</h3>
+                <p>describes a person's level of goal orientation and persistence. Those who are high in Conscientiousness are organized and determined, and are able to forego immediate gratification for the sake of long-term achievement. Those who are low in this trait are impulsive and easily sidetracked.</p>
+            </div>
+
+            <div class="row">
+                <h3>Extraversion</h3>
+                <p>describes a person’s inclination to seek stimulation from the outside world, especially in the form of attention from other people. Extraverts engage actively with others to earn friendship, admiration, power, status, excitement, and romance. Introverts, on the other hand, conserve their energy, and do not work as hard to earn these social rewards.</p>
+            </div>
+
+            <div class="row">
+                <h3>Agreeableness</h3>
+                <p>describes the extent to which a person prioritizes the needs of others over their own needs. People who are high in Agreeableness experience a great deal of empathy and tend to get pleasure out of serving and taking care of others. People who are low in Agreeableness tend to experience less empathy and put their own concerns ahead of others.</p>
+            </div>
+
+            <div class="row">
+                <h3>Neuroticism</h3>
+                <p>describes a person's tendency to respond to stressors with negative emotions, including fear, sadness, anxiety, guilt, and shame. This trait can be thought of as an alarm system. People experience negative emotions as a sign that something is wrong in the world. Fear is a response to danger, guilt a response to having done something wrong. However, not everyone has the same reaction to a given situation. High Neuroticism scorers are more likely to react to a situation with strong negative emotions. Low Neuroticism scorers are more likely to brush off their misfortune and move on.</p>
+            </div>
+
+            
+          </div>
+          
+        </section>
+        <!--================ Hero sm Banner end =================-->
+    
+        <!-- ================ start footer Area ================= -->
+        <footer class="footer-area section-gap">
+                <div class="container">
+                    
+                    <div class="footer-bottom row align-items-center text-center text-lg-left">
+                        <p class="footer-text m-0 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+        </footer>
+        <!-- ================ End footer Area ================= -->
+    </div>
+    
+<!--================Page 2=================-->
+
+
+<script src="js/chartist.min.js"></script>
+  <script src="js/anime.js"></script>
+  <script src="page1Vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="page1Vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="page1Vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="js/page1Main.js"></script>
+  <script src="js/main.js"></script>
+
+  
+  <script>
+    $( document ).ready(function() {
+
+        $("#page1").fadeIn("slow");
+
+        $("#btnPage1").click(function(){
+            goToPage2();
+        });
+
+        $("#btnPage2").click(function(){
+            goToPage3();
+        });
+
+        $("#btnNewProcess").click(function(){
+            addNewProcess();
+        });
+
+    });
+
+
+  </script>
+</body>
+</html>

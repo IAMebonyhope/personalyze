@@ -1,0 +1,68 @@
+
+#explain{
+    color: white !important;
+    text-align: justify;
+    margin: 30px auto;
+    width: 70%;
+}
+#explain h3{
+    color: white !important;
+}
+
+#chart{
+    margin: 20px auto;
+}
+
+.table-page2{
+    margin: 0px auto;
+}
+
+#page2 .button{
+    margin: 15px auto;
+    display: block !important;
+}
+
+#page2 .hero-banner {
+    padding: 50px 0 50px 0 !important;
+}
+
+#page3 .hero-banner {
+    padding: 50px 0 50px 0 !important;
+}
+
+.anime-boxes {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 4px;
+    display: inline-block;
+    margin-bottom: 300px;
+    text-align: center;
+    line-height: 100px;
+}
+.anime-boxes:hover {
+    transform: 	translateX(250px);
+    transition: all 1.5s ease;
+    animation-delay: 100s;
+    transition-delay: 5s
+}
+
+@media only screen and (min-width: 600px) {
+
+    .table-page2{
+        width: 600px;
+    }
+    
+}
+
+@media only screen and (max-width: 400px) {
+
+    #chart{
+        overflow: scroll;
+    }
+
+    #explain{
+        width: 90%;
+    }
+}
+
